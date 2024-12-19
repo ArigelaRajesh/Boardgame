@@ -8,25 +8,25 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/jaiswaladi246/Boardgame.git'
+                git branch: 'main', url: 'https://github.com/ArigelaRajesh/Boardgame.git'
             }
         }
         
         stage('Compile') {
             steps {
-                sh "mvn compile"
+                sh 'mvn compile'
             }
         }
         
         stage('Test') {
             steps {
-                sh "mvn test"
+                sh 'mvn test'
             }
         }
         
-        stage('Build') {
+        stage('Package') {
             steps {
-                sh "mvn package"
+                sh 'mvn package'
             }
         }
     }
